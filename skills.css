@@ -1,0 +1,51 @@
+.skills-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.skill-card {
+    background-color: #ade8f4;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid #90e0ef;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 4px 32px rgba(0, 180, 216, 0.15);
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 32px rgba(0, 180, 216, 0.3);
+    border-color: #fdffb6;
+}
+
+.skill-card img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.skill-card h3 {
+    color: #003049;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.skill-card p {
+    color: #0077b6;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* No custom button styles needed; use .btn from styles.css for any button-like elements */

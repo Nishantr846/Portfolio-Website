@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nishant's Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">Nishant's</span>
+                    <span class="logo-highlight">Portfolio</span>
+                </a>
+            </div>
+            <div class="right">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact Me</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="firstSection">
+            <div class="leftSection">
+                <h1>Hi, I'm <span class="textpurple">Nishant</span></h1>
+                <div>and I am a passionate</div>
+                <span id="element"></span>
+                <div class="button">
+                    <a href="https://drive.google.com/file/d/1VYGSaVJeSp3uTAu7wI2C5WzB4Rdt9Sq0/view?usp=sharing
+" target="_blank" class="btn">Download Resume</a>
+                    <a href="https://github.com/Nishantr846" target="_blank" class="btn">Visit GitHub</a>
+                </div>
+            </div>
+            <div class="rightSection">
+                <img src="/icons/Resume pic.png" alt="Developer Image">
+            </div>
+        </section>
+    </main>
+
+
+
+    <!-- Load library from the CDN -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <!-- Setup and start animation! -->
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Data Analyst.', 'Machine Learning Engineer.', 'Web Developer.', 'Software Engineer.'],
+            typeSpeed: 50,
+            backSpeed: 50,
+            loop: true
+        });
+    </script>
+</body>
+
+</html>
