@@ -2,8 +2,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 4rem 0;
-    gap: 2rem;
+    padding: 0rem 0;
+    gap: 0rem;
 }
 
 .firstSection::before {
@@ -27,19 +27,21 @@
 
 .firstSection>div.leftSection {
     margin-left: 12rem;
+    margin-top: 0px;
 }
 
 .leftSection {
     font-size: 3rem;
     position: relative;
     z-index: 1;
+    margin-top: 0px;
 }
 
 .leftSection h1,
 .leftSection .textpurple,
 .leftSection div,
 #element {
-    color: #003049;
+    color: #0594e1;
     text-shadow: 0 2px 4px rgba(255, 12, 12, 0.08);
 }
 
