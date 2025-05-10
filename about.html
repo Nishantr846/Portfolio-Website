@@ -10,17 +10,31 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="about.css">
+    <style>
+        @media screen and (max-width: 768px) {
+            .social-links {
+                flex-direction: column !important;
+                align-items: center !important;
+                gap: 1rem !important;
+            }
+        }
+    </style>
 </head>
 
 <body>
     <header>
         <nav>
-            <div class="left">
+            <div class="center-logo">
                 <a href="index.html" class="logo">
                     <span class="logo-text">Nishant's</span>
                     <span class="logo-highlight">Portfolio</span>
                 </a>
             </div>
+            <button class="mobile-menu-btn" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <div class="right">
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -37,7 +51,7 @@
         <section class="about-section">
             <h1 class="section-title">About Me</h1>
             <div class="about-content">
-                <p>Hi, I’m Nishant Kumar, a passionate software engineer currently pursuing B.Tech in Computer Science
+                <p>Hi, I'm Nishant Kumar, a passionate software engineer currently pursuing B.Tech in Computer Science
                     at KIIT,
                     Bhubaneswar. I love turning ideas into real, impactful digital solutions—whether it's building
                     interactive web apps or
@@ -51,10 +65,10 @@
                     visualizer that helps users understand algorithm behavior through real-time animations. These
                     projects reflect my
                     passion for both front-end interactivity and back-end intelligence.</p>
-                <p>I'm constantly learning, whether it’s exploring new technologies, improving my DSA skills, or picking
-                    up tools like TensorFlow, Flask, or Streamlit. I’m also a strong believer in teamwork, having led
+                <p>I'm constantly learning, whether it's exploring new technologies, improving my DSA skills, or picking
+                    up tools like TensorFlow, Flask, or Streamlit. I'm also a strong believer in teamwork, having led
                     creative initiatives as the Artist of the KIIT Art Society.</p>
-                <p>Thanks for stopping by—I’m excited to keep growing, building, and collaborating!
+                <p>Thanks for stopping by—I'm excited to keep growing, building, and collaborating!
                 </p>
             </div>
 
@@ -67,7 +81,37 @@
         </section>
     </main>
 
+    <script>
+        // Mobile menu functionality
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navRight = document.querySelector('.right');
+        const body = document.body;
 
+        // Toggle menu
+        mobileMenuBtn.addEventListener('click', () => {
+            navRight.classList.toggle('active');
+            mobileMenuBtn.classList.toggle('active');
+            body.style.overflow = navRight.classList.contains('active') ? 'hidden' : '';
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.right a').forEach(link => {
+            link.addEventListener('click', () => {
+                navRight.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
+                body.style.overflow = '';
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navRight.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                navRight.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
+                body.style.overflow = '';
+            }
+        });
+    </script>
 </body>
 
 </html>

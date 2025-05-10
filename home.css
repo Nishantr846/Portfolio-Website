@@ -4,6 +4,8 @@
     align-items: center;
     padding: 0rem 0;
     gap: 0rem;
+    margin-top: 0;
+    padding-top: 0;
 }
 
 .firstSection::before {
@@ -119,6 +121,7 @@
 
 .rightSection {
     position: relative;
+    margin-top: 0;
 }
 
 .rightSection::before {
@@ -169,4 +172,64 @@
 .right {
     font-size: 18px;
     font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+    .firstSection {
+        flex-direction: column;
+        align-items: flex-start;
+        /* Align content to the left */
+        text-align: left;
+        /* Align text to the left */
+        padding: 1rem;
+        gap: 2rem;
+        width: 100%;
+    }
+
+    .firstSection>div,
+    .leftSection,
+    .rightSection {
+        width: 100% !important;
+        /* Ensure full width */
+        margin: 0 !important;
+        /* Remove any margin */
+        padding: 0 !important;
+        /* Remove any padding */
+    }
+
+    .leftSection .button {
+        justify-content: flex-start;
+        /* Align buttons to the left */
+    }
+
+    .rightSection {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        margin-top: 15px !important;
+    }
+
+    .rightSection img {
+        display: block;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .rightSection {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        margin-top: 50px;
+    }
+
+    .rightSection img {
+        display: block;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        margin-top: 50px;
+    }
 }

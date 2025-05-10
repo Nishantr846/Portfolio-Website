@@ -16,12 +16,17 @@
 <body>
     <header>
         <nav>
-            <div class="left">
+            <div class="center-logo">
                 <a href="index.html" class="logo">
                     <span class="logo-text">Nishant's</span>
                     <span class="logo-highlight">Portfolio</span>
                 </a>
             </div>
+            <button class="mobile-menu-btn" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <div class="right">
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -66,7 +71,7 @@
             </div>
 
             <!-- Project Card 3 -->
-            <div class="project-card" data-images='["icons/sortify2.png","icons/sortify.png" ]'>
+            <div class="project-card" data-images='["icons/sortify2.png","icons/sortify.png"]'>
                 <h3>Sortify - Sorting Algorithm Visualizer</h3>
                 <p>Interactive web application that visualizes various sorting algorithms in real-time.
                 </p>
@@ -185,6 +190,37 @@
         </div>
     </div>
     <script src="projects.js" defer></script>
+    <script>
+        // Mobile menu functionality
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navRight = document.querySelector('.right');
+        const body = document.body;
+
+        // Toggle menu
+        mobileMenuBtn.addEventListener('click', () => {
+            navRight.classList.toggle('active');
+            mobileMenuBtn.classList.toggle('active');
+            body.style.overflow = navRight.classList.contains('active') ? 'hidden' : '';
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.right a').forEach(link => {
+            link.addEventListener('click', () => {
+                navRight.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
+                body.style.overflow = '';
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navRight.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                navRight.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
+                body.style.overflow = '';
+            }
+        });
+    </script>
 </body>
 
 </html>
